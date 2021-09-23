@@ -1,9 +1,10 @@
 //pedir  el nombre y la carrera
 var nombre = prompt ("Coloca tu NOMBRE!")
+var apellido = prompt ("coloca tu APELLIDO!!")
 var carrera = prompt ("¿En que carrera te encuentras?")
 
 //nota de aprobacion
-var nota_APR = prompt("¿cual es la nota de aprobacion", "4.0")
+var nota_APR = prompt("¿cual es la nota de aprobacion", "7.0")
 
 //pedir los modulos
 var modulo1 = prompt ("escribe el primer modulo")
@@ -26,7 +27,7 @@ var nM3_2 = prompt ("coloca la segunda nota del MODULO 3","1.0")
 //var nM3_3 = prompt ("coloca la tercera nota del MODULO 3","1.0")
 
 //pegamos  los h5 y le agregamos el nombre y la carrera
-document.write(`<div class="container"> <h5>Nombre:   ${nombre} </h5> </div>`)
+document.write(`<div class="container"> <h5>Nombre:   ${nombre} ${apellido} </h5> </div>`)
 document.write(`<div class="container"> <h5>Carrera:   ${carrera} </h5> </div>`)
 
 //transformando a entero
@@ -53,13 +54,14 @@ var suma_m2 = nM2_1 + nM2_2 + nM2_3
 var divicion_m2 = suma_m2 / 3
 var promedio_modulo2 = divicion_m2
 //modulo3
-var suma_m3 = nM3_1 + nM3_2 
-var divicion_m3 = suma_m2 / 3
-var promedio_modulo3 = divicion_m3
+//var suma_m3 = nM3_1 + nM3_2 
+//var divicion_m3 = suma_m2 / 3
+//var promedio_modulo3 = divicion_m3
 
 //restante
-var resta = nota_APR - nM3_1 - nM3_2  
-var restante = resta
+var despejar_nota3 = 3 * nota_APR - nM3_1 - nM3_2  
+var suma_nota3 = despejar_nota3 + nM3_1 + nM3_2
+var promedio_nota3 = suma_nota3 / 3
 
 
 
@@ -83,28 +85,28 @@ document.write(`
                     <td>${nM1_1}</td>
                     <td>${nM1_2}</td>
                     <td>${nM1_3}</td>
-                    <td>${promedio_modulo1.toFixed(2)}</td>
+                    <td>${promedio_modulo1.toFixed(1)}</td>
                   </tr>
                   <tr>
                     <th scope="row">${modulo2}</th>
                     <td>${nM2_1}</td>
                     <td>${nM2_2}</td>
                     <td>${nM2_3}</td>
-                    <td>${promedio_modulo2.toFixed(2)}</td>
+                    <td>${promedio_modulo2.toFixed(1)}</td>
                   </tr>
                   <tr>
                     <th scope="row">${modulo3}</th>
                     <td>${nM3_1}</td>
                     <td>${nM3_2}</td>
                     <td>-</td>
-                    <td>${promedio_modulo3.toFixed(2)}</td>
+                    <td>-</td>
                   </tr>
                 </tbody>
               </table>
 `)
 document.write(`
 <div class="container">
-<p> para aprobar el ramo  ${modulo3} con nota ${nota_APR} necesitas obtener un ${restante.toFixed(2)} en la 3 nota </p>
+<p> para aprobar el ramo  ${modulo3} con nota ${nota_APR} necesitas obtener un ${despejar_nota3.toFixed(1)} en la 3 nota </p>
 </div>
 
 `) 
